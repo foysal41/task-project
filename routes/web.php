@@ -40,6 +40,8 @@ Route::get('app/logout' , [AppController::class , 'logout']);
 Route::get('/tasks' , [TasksController::class , 'index'])->name('tasks.index')->middleware('auth');
 Route::post('/tasks' , [TasksController::class , 'store'])->name('tasks.store')->middleware('auth');
 
+Route::delete('/tasks/{task}', [TasksController::class, 'destroy'])->name('tasks.destroy')->middleware('auth');;
+
 
 require __DIR__.'/auth.php';
 
